@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+:root{
+    --main-color: black;
+    --second-color: white;
+    font-family:'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    max-width: 980px;
+    margin: auto;
+}
+
+
+.header-nav .logo {
+    font-family: 'Krona One', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    background-color: aqua;
+}
+.header-nav .menu-items{
+    display: none;
+    justify-content: space-around;
+    flex: 1;
+}
+.header-nav .menu-items a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:var(--main-color);
+    padding: 5px;
+    border: 1px solid transparent;
+}
+.header-nav .menu-items a:hover{
+    border: 1px solid var(--main-color);
+}
+
+/* burger menu*/
+#burger-checkbox{
+    display: none;
+}
+.burger-icon{
+    font-size: 2rem;
+}
+.header-nav input:checked ~ .menu-items{
+    display: block;
+}
+@media(min-width: 769px){
+    .burger-icon{
+        display: none;
+    }
+    .burger-icon:hover{
+        cursor: pointer;
+    }
+    
+    .header-nav{
+        display: flex;
+        align-items:center;
+    }
+    #burger-checkbox ~ .menu-items{
+    display: flex;
+    }
+
+}
+
+
+
+header .banner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../IMG/Baby\ Yoda.svg);
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+}
+.banner h1{
+    font-size: 3.5rem;
+    color: var(--main-color)
+}
+
+/*Button*/
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  max-width: 150px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect01 {
+  color: #FFF;
+  border: 2px solid #000;
+  box-shadow:0px 0px 0px 1px #000 inset;
+  background-color: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect01:hover {
+  border: 1px solid #666;
+  background-color: #FFF;
+  box-shadow:0px 0px 0px 1px #EEE inset;
+}
+
+/*btn_text*/
+.effect01 span {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+.effect01:hover span{
+  letter-spacing: 0.13em;
+  color: #333;
+}
+
+/*highlight*/
+.effect01:after {
+  background: #FFF;
+  border: 0px solid #000;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: .8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+  z-index: 1;
+}
+.effect01:hover:after {
+  background: #FFF;
+  border: 20px solid #000;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+ .product-card img{
+width: 100%;
+ }
+ .product-card .product-button {
+     display: flex;
+     justify-content: space-around;
+ }
+
+ @media(min-width: 500px) {
+.products-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    }
+ }
+ @media(min-width: 660px) {
+.products-list{
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+ }
+ @media(min-width: 980px) {
+.products-list{
+    grid-template-columns: repeat(4, 1fr);
+    }
+ }
